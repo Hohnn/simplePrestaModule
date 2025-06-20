@@ -158,9 +158,9 @@ class Jbs_testamonial extends Module
         $sql = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'jbs_testamonial` (
             `id_jbs_testamonial` INT UNSIGNED NOT NULL AUTO_INCREMENT,
             `user_id` INT NOT NULL,
-            `title` VARCHAR(255) NOT NULL,
             `message` TEXT NOT NULL,
             `active` TINYINT(1) NOT NULL DEFAULT 1,
+            `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (`id_jbs_testamonial`)
         ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 
