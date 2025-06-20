@@ -149,7 +149,8 @@ class Jbs_testamonial extends Module
 
     public function uninstall()
     {
-        return parent::uninstall();
+        return parent::uninstall() && Configuration::deleteByName('TESTAMONIAL_LIMIT') &&
+            Db::getInstance()->execute('DROP TABLE IF EXISTS `' . _DB_PREFIX_ . 'jbs_testamonial`');
     }
 
     private function installDb()
